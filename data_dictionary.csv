@@ -1,0 +1,46 @@
+column,group,type,unit,description
+record_id,ID,string,,Unique ID of one farm-season (plot) record
+farm_id,ID,string,,Household farm ID; the same farm appears in many seasons and in both train and test
+country,Location,category,,Kenya / Uganda / Tanzania / Rwanda / Ethiopia
+region,Location,category,,County / district / zone (23 in total)
+agro_ecological_zone,Location,category,,Broad agro-ecological zone of the region
+latitude,Location,float,degrees,Approximate farm latitude (jittered for privacy)
+longitude,Location,float,degrees,Approximate farm longitude (jittered for privacy)
+altitude_m,Location,int,m,Farm elevation above sea level
+year,Season,int,,Calendar year of planting
+season,Season,category,,Local season name (e.g. Long rains / Short rains; Masika / Vuli; Season A / B; Meher / Belg)
+farm_size_ha,Household,float,ha,Total land cultivated by the household
+plot_size_ha,Plot,float,ha,Size of the surveyed maize plot
+hh_head_gender,Household,category,,Gender of household head
+hh_head_age,Household,int,years,Age of household head
+hh_size,Household,int,people,Household members
+education_years,Household,int,years,Schooling of household head
+coop_member,Household,binary,,1 = member of a farmer cooperative or group
+extension_visits,Support,int,visits,Extension officer visits during the season
+access_to_credit,Support,binary,,1 = received input credit or a loan this season
+distance_to_market_km,Support,float,km,Distance to nearest input / output market
+soil_type,Soil,category,,WRB reference soil group
+soil_ph,Soil,float,pH,Topsoil pH (water); missing where no soil test was done
+soil_organic_carbon_pct,Soil,float,%,Topsoil organic carbon
+soil_nitrogen_pct,Soil,float,%,Topsoil total nitrogen
+soil_p_ppm,Soil,float,mg/kg,Available phosphorus (Olsen)
+slope_pct,Soil,float,%,Plot slope
+seed_type,Inputs,category,,Hybrid / OPV (open-pollinated) / Local/recycled
+seed_rate_kg_ha,Inputs,float,kg/ha,Seed planted
+planting_delay_days,Management,int,days,Days between rainfall onset and planting
+fertilizer_dap_kg_ha,Inputs,float,kg/ha,DAP applied at planting (18-46-0)
+fertilizer_urea_kg_ha,Inputs,float,kg/ha,Urea top-dressing (46-0-0)
+manure_t_ha,Inputs,float,t/ha,Farmyard manure / compost applied
+intercrop,Management,category,,Sole maize / Beans / Cowpea / Pigeonpea / Desmodium (push-pull)
+weeding_count,Management,int,times,Number of weedings
+pesticide_used,Management,binary,,1 = pesticide applied against fall armyworm or stalk borer
+irrigation,Management,binary,,1 = any supplementary irrigation
+seasonal_rainfall_mm,Weather,float,mm,Total rainfall over the growing season (satellite-gauge blend)
+rainfall_onset_doy,Weather,int,day of year,Day the rains started
+longest_dry_spell_days,Weather,int,days,Longest run of dry days during the season
+mean_tmax_c,Weather,float,°C,Mean daily maximum temperature over the season
+ndvi_peak,Remote sensing,float,index,Peak-season NDVI over the plot; missing under persistent cloud
+faw_incidence,Pests & disease,category,,Fall armyworm damage: Absent / Low / Medium / High
+mln_reported,Pests & disease,binary,,1 = maize lethal necrosis symptoms reported
+striga_present,Pests & disease,binary,,1 = Striga (witchweed) observed in the plot
+yield_kg_ha,Target,float,kg/ha,Grain yield at 13% moisture (train only)
